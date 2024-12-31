@@ -62,8 +62,8 @@ npm (or yarn)
 Clone the Repository
 bash
 Copy code
-git clone https://github.com/yourusername/ems-project.git
-cd ems-project
+git clone https://github.com/codingwizzzard/education-management-system.git
+cd education-management-system
 Backend Setup
 Navigate to the backend folder:
 
@@ -87,7 +87,7 @@ Start the backend server:
 bash
 Copy code
 npm run server
-The backend will run at https://education-managment.onrender.com.
+The backend will run at http://localhost:5000
 
 Frontend Setup
 Navigate to the frontend folder:
@@ -100,11 +100,6 @@ Install dependencies:
 bash
 Copy code
 npm install
-Create a .env file in the frontend directory with the following variables:
-
-arduino
-Copy code
-REACT_APP_API_URL=https://education-managment.onrender.com
 Start the frontend server:
 
 bash
@@ -116,6 +111,7 @@ API Endpoints
 Authentication
 POST /api/auth/login: Logs in a user and returns a token and role.
 POST /api/auth/register: Registers a new user (Admin, Teacher, Student).
+
 Courses
 POST /api/courses/create: Create a new course (Admin only).
 PUT /api/courses/edit/:courseId: Edit a course (Admin and Teacher).
@@ -136,9 +132,11 @@ Can access all pages and perform all operations (Add, Edit, Delete Courses, View
 Teacher
 Can only edit courses they are assigned to.
 Can view students in their courses and assign grades.
+
 Student
 Can upload assignments and create quizzes for courses they are enrolled in.
 Can view their grades for completed courses.
+
 Protected Routes
 The app uses a ProtectedRoute component that checks if the user has the correct role before allowing access to specific routes.
 
